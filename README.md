@@ -55,7 +55,9 @@ Huge thanks to the Mopa Bootstrap bundle for ideas on how to handle this!
             resources:
                 - 'PffTagItBundle:Form:fields.html.twig'
 
-### In the template you want to use the Tag It form field in:
+### In the template you want to use the Tag It form field in (If you're using Sonata Admin, extend a template, 
+SonataAdminBundle::standard_layout.html.twig or SonataAdminBundle:CRUD:show.html.twig and update your config file with
+the correct template):
 
     {% block javascripts %}
         {{ parent() }}
