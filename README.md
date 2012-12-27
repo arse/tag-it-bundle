@@ -24,11 +24,10 @@ Huge thanks to the Mopa Bootstrap bundle for ideas on how to handle this!
             }
         ],
         "require": {
-            // all your existing requires
-            ...
+            // ...
             "pff/tag-it-bundle": "dev-master",
             "aehlke/tag-it": "dev-master"
-            ...
+            // ...
         },
         // ...
     }
@@ -88,3 +87,14 @@ Huge thanks to the Mopa Bootstrap bundle for ideas on how to handle this!
         'label' => 'Tags',
         'data_path' => $this->container->get('router')->generate('my_tag_list'),
     ))
+
+
+### And this is really finally...
+You have to set up the route which returns a JSON array of the tags for the AJAX suggestion
+
+The route you've set above is passed two POST variables:
+* term - the term that the user has entered so far
+* limit - the amount of suggestions set in this bundle's config
+
+So you'd want to hit the database or return a static JSON array of keywords based upon these variables. But please, don't forget to validate the input! 
+ 
